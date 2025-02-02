@@ -110,14 +110,6 @@ void ServerWindow::onReadyRead()
     m_log->append("Relayed data from client " + senderSocket->peerAddress().toString());
 }
 
-/*!
- * \brief ServerWindow::broadcastClientCount
- * Broadcasts the current number of connected clients to everyone.
- * We define a simple "message type" integer at the start of the packet:
- * 0 = text
- * 1 = file
- * 2 = clientCount
- */
 void ServerWindow::broadcastClientCount()
 {
     int count = m_clients.size();
